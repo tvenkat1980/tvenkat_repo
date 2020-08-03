@@ -1,0 +1,23 @@
+<!DOCTYPE HTML>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+    <title>Bookmarks view</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+	<h3>Book Mark Added Successfully</h3>
+	<table>
+		<tr>
+			<th>id</th><th>Name</th><th>URL</th><th>Category</th>
+		</tr>
+		<tr>
+			<td th:text="${id}"></td>
+			<td th:text="${name}"></td>
+        	<td th:text="${url}"></td>
+        	<td th:text="${category}"></td>	
+		</tr>
+	</table>
+        
+    <a href="/">Add another bookmark</a>
+</body>
+</html>

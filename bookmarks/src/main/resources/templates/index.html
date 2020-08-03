@@ -1,0 +1,40 @@
+<!DOCTYPE HTML>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+<title>BookMarks</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+	<h1>Bookmarks Form</h1>
+	<form action="#" th:action="@{/addBookmark}" th:object="${bookmark}"
+		method="post">
+		<table>
+			<tr>
+				<td>Name:</td>
+				<td><input type="text" th:field="*{name}" /></td>
+				<td th:if="${#fields.hasErrors('name')}" th:errors="*{name}">Name
+					Error</td>
+			</tr>
+			<tr>
+				<td>URL:</td>
+				<td><input type="text" th:field="*{url}" /></td>
+				<td th:if="${#fields.hasErrors('url')}" th:errors="*{url}">URL
+					Error</td>
+			</tr>
+			<tr>
+				<td>Category:</td>
+				<td><input type="text" th:field="*{category}" /></td>
+				<td th:if="${#fields.hasErrors('category')}" th:errors="*{category}">Category
+					Error</td>
+			</tr>
+			<tr>
+				<td><button type="submit">Save</button> 
+				    <button type="reset">Reset</button></td>
+			</tr>
+		</table>
+	</form>
+	<p>
+		<a href="/getAllBookmarks">Get All Bookmarks</a>
+	</p>
+</body>
+</html>
