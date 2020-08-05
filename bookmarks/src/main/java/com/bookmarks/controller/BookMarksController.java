@@ -22,8 +22,8 @@ import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 import com.bookmarks.dto.BookmarkDto;
-import com.bookmarks.model.BookmarkReqModel;
 import com.bookmarks.service.BookmarkService;
+import com.bookmarks.ui.request.model.BookmarkReqModel;
 
 @Controller
 public class BookMarksController implements WebMvcConfigurer
@@ -62,6 +62,7 @@ public class BookMarksController implements WebMvcConfigurer
         model.addAttribute("name",updatedBookmarkDto.getName());
         model.addAttribute("url",updatedBookmarkDto.getUrl());
         model.addAttribute("category",updatedBookmarkDto.getCategory());
+        model.addAttribute("notes",updatedBookmarkDto.getNotes());
         //return "redirect:/results"
         return "bookmarkview";
 	}

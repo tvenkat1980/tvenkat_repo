@@ -14,15 +14,18 @@ public class Bookmark {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
-	
+
 	@Column(name = "BKMRK_NAME")
 	private String name;
-	
+
 	@Column(name = "BKMRK_URL")
 	private String url;
-	
+
 	@Column(name = "BKMRK_CATEGORY")
 	private String category;
+
+	@Column(name = "BKMRK_NOTES")
+	private String notes;
 
 	public Long getId() {
 		return id;
@@ -56,9 +59,18 @@ public class Bookmark {
 		this.category = category;
 	}
 
+	public String getNotes() {
+		return notes;
+	}
+
+	public void setNotes(String notes) {
+		this.notes = notes;
+	}
+
 	@Override
 	public String toString() {
-		return "Bookmark [id=" + id + ", name=" + name + ", url=" + url + ", category=" + category + "]";
+		return "Bookmark [id=" + id + ", name=" + name + ", url=" + url + ", category=" + category + ", notes=" + notes
+				+ "]";
 	}
-	
+
 }

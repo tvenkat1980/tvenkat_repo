@@ -5,25 +5,27 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 </head>
 <body>
-	<h3>All Bookmarks Details</h3>
-	<table>
+	<h3>Bookmarks Details</h3>
+	<table border="1">
     <thead>
         <tr>
             <th> Id </th>
             <th> Name </th>
             <th> URL </th>
             <th> Category </th>
+            <th> Notes </th>
         </tr>
     </thead>
     <tbody>
 	<tr th:if="${bookmarksList.empty}">
-            <td colspan="2"> No Booksmarks Available </td>
+            <td colspan="5"> No Booksmarks Available </td>
         </tr>
         <tr th:each="bookmark : ${bookmarksList}">
             <td th:text="${bookmark.id}" />
             <td th:text="${bookmark.name}" />
             <td th:text="${bookmark.url}" />
             <td th:text="${bookmark.category}" />
+            <td th:text="${bookmark.notes}" />
         </tr>
     </tbody>
 </table>
