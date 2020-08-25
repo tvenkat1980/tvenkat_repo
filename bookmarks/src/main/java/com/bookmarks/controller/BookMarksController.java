@@ -38,7 +38,7 @@ public class BookMarksController implements WebMvcConfigurer
 		registry.addViewController("/results").setViewName("bookmarkview");
 	}
 	
-	@GetMapping("/")
+	@GetMapping("/index")
 	public String displayBookmarksForm(Model model) {
 		model.addAttribute("bookmark", new BookmarkReqModel());
 		return "index";
